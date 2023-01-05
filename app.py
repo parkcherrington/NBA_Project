@@ -43,5 +43,8 @@ def server(input, output, session):
         if input.avg():
             plt.axvline(means[input.stat()].mean(), color = 'red')
         return fig
-    
+    @output
+    @render.ui
+    def player_comp():
+        print('player comp')
 app = App(app_ui, server, debug = True)
